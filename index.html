@@ -1,1 +1,23 @@
-<h1>no</h1> 
+<head>
+  <title>no</title>
+</head>
+
+<body>
+  <h1 id="text">no</h1>
+</body>
+
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const lang = urlParams.get('lang') || "en";
+
+    const options = {
+      pl: { no: "nie", yes: "tak" },
+      en: { no: "no", yes: "yes" }
+    }
+
+    const yesNo = urlParams.get("yes") || "no";
+    const value = options[lang][yesNo];
+    document.title = value;
+    console.log(document.getElementById("text"))
+    document.getElementById("text").innerText = value;
+  </script>
