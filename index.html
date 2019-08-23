@@ -8,14 +8,15 @@
 
 <script>
     const urlParams = new URLSearchParams(window.location.search);
-    const lang = urlParams.get('lang') || "en";
 
     const options = {
       pl: { no: "nie", yes: "tak" },
       en: { no: "no", yes: "yes" }
     }
 
+    const lang = urlParams.get('lang') || "en";
     const yesNo = urlParams.get("yes") || "no";
+
     const value = options[lang][yesNo];
     document.title = value;
     document.getElementById("text").innerText = value;
