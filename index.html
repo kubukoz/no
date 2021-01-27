@@ -17,7 +17,9 @@
     const lang = urlParams.get('lang') || "en";
     const yesNo = urlParams.get("yes") || "no";
 
-    const value = options[lang][yesNo];
+    const text = urlParams.get('text');
+
+    const value = text || options[lang][yesNo];
     document.title = value;
     document.getElementById("text").innerText = value;
   </script>
